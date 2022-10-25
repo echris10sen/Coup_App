@@ -1,2 +1,2 @@
-# Coup_App
-App based on Coup
+# Coup-App-
+Game based on Coup 
