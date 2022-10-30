@@ -1,22 +1,14 @@
-# to open/create a new html file in the write mode
-f = open('GFG.html', 'w')
+import json
 
-# the html code which will go in the file GFG.html
-html_template = """<html>
-<head>
-<title>Title</title>
-</head>
-<body>
-<h2>Welcome To GFG</h2>
-  
-<p>Default code has been loaded into the Editor.</p>
-  
-</body>
-</html>
-"""
 
-# writing the code into the file
-f.write(html_template)
+class card:
+    # Class Variables
+    name = "Werewolf"
+    # Constructor
 
-# close the file
-f.close()
+    def __init__(self):
+        print("Hello World")
+
+
+with open('data.json', 'w') as jsonfile:
+    json.dump(card, jsonfile)
