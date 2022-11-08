@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Styles/coup.css">
-    <script defer type="module" src="./Offline/pageInit.js"></script>
+    <!-- <script defer type="module" src="./Offline/pageInit.js"></script> -->
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script defer>
+    <!-- <script defer>
         async function getName(){
             // let rawData = await fetch("https://echris10sen.github.io/Coup_App/Tinker/helloWorld.py");
             let rawData = await fetch("./Tinker/helloWorld.py");
@@ -18,7 +18,8 @@
             }
         }
         getName();
-    </script>
+    </script> -->
+    <script defer src="./scripts/home.js"></script>
 
     <title>Coup Home</title>
 </head>
@@ -30,8 +31,17 @@
         <h5 class="coup">Would you like to start?</h5>
         <p class="cards"></p>
         <p class="opponentsCards"></p>
-        <button class="start">Yes</button>
-        <button class="instructions">Instructions</button>
+        <button class="start cyber-button">
+            Yes<span aria-hidden>_</span>
+            <span aria-hidden class="cybr-btn__glitch">Help Me_</span>
+            <span aria-hidden class="cybr-btn__tag">G54</span>
+        </button>
+        <button class="instructions cyber-button">
+            Instructions<span aria-hidden>_</span>
+            <span aria-hidden class="cybr-btn__glitch">Im-Trapped_</span>
+            <span aria-hidden class="cybr-btn__tag">G54</span>
+        </button>
+    </div>
     </div>
 </body>
 </html>
