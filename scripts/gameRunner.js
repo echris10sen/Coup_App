@@ -1,5 +1,6 @@
-import { deck } from "../../personalSite/scripts/deckClass.js";
-import { card } from "../../personalSite/scripts/cardClass.js";
+import { deck } from "../scripts/deckClass.js";
+import { card } from "../scripts/cardClass.js";
+import { player } from "../scripts/playerClass.js";
 
 export class gameRunner {
   // variables
@@ -25,11 +26,15 @@ export class gameRunner {
     // Player Cards
     let card1 = new card();
     card1.card(gameDeck[0]);
-    
+
     let card2 = new card();
     card2.card(gameDeck[3]);
-    document.getElementsByClassName('cards')[0].innerHTML= "Welcome to Coup" + "<br>" + "your cards are " + `${card1.name} and ${card2.name}`;
 
+    let player1 = new player();
+    player1.player(card1, card2);
+    
+    // document.getElementsByClassName('cards')[0].innerHTML= "Welcome to Coup" + "<br>" + "your cards are " + `${card1.name} and ${card2.name}`;
+    document.getElementsByClassName('cards')[0].innerHTML = "Welcome to Coup" + "<br>" + "your cards are " + `${player1.getcard1().name} and ${player1.getcard2().name}`;
     // Opponent Cards
     let card3 = new card();
     card3.card(gameDeck[2]);

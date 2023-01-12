@@ -1,4 +1,4 @@
-import { gameRunner } from "../../personalSite/scripts/gameRunner.js";
+import { gameRunner } from "../scripts/gameRunner.js";
 function addListeners() {
     console.log("heyo");
     let game = new gameRunner();
