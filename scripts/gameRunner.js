@@ -5,24 +5,34 @@ import { player } from "../scripts/playerClass.js";
 export class gameRunner {
   // variables
   initialDeck;
+  numPlayers;
 
   // constructor
   gameRunner(params){
     this.initialDeck = new deck();
     this.initialDeck.deck();
+    this.numPlayers = [];
     console.log("hello");
   }
   
   //methods
-  showCards(card2, card4) {
-      document.getElementsByClassName('opponentsCards')[0].innerHTML= `Your Opponents cards were ${card2.name} and ${card4.name}`;
+  showCards(players) {
+     // document.getElementsByClassName('cards')[0].innerHTML= "Welcome to Coup" + "<br>" + "your cards are " + `${card1.name} and ${card2.name}`;
+    document.getElementsByClassName('cards')[0].innerHTML = "Welcome to Coup" + "<br>" + "your cards are " + `${players[0].getcard1().name} and ${players[0].getcard2().name}`;
+    
+    document.getElementsByClassName('opponentsCards')[0].innerHTML= `Your Opponents cards were ${players[1].getcard1().name} and ${players[1].getcard2().name}`;
+  }
+
+  reset() {
+    
   }
 
   runGame() {
     console.log("hello I work");
-
+    // Setup
     let gameDeck = this.initialDeck.shuffle();
-    
+    let players = this.numPlayers;
+
     // Player Cards
     let card1 = new card();
     card1.card(gameDeck[0]);
@@ -33,14 +43,25 @@ export class gameRunner {
     let player1 = new player();
     player1.player(card1, card2);
     
-    // document.getElementsByClassName('cards')[0].innerHTML= "Welcome to Coup" + "<br>" + "your cards are " + `${card1.name} and ${card2.name}`;
-    document.getElementsByClassName('cards')[0].innerHTML = "Welcome to Coup" + "<br>" + "your cards are " + `${player1.getcard1().name} and ${player1.getcard2().name}`;
+   
+
     // Opponent Cards
     let card3 = new card();
     card3.card(gameDeck[2]);
     
     let card4 = new card();
     card4.card(gameDeck[4]);
-    this.showCards(card2, card4);
+
+    let player2 = new player();
+    player2.player(card2, card4);
+
+    players.push(player1);
+    players.push(player2);
+    
+    this.showCards(players);
+
+    for (let index = players.length; index > 0; index--) {
+        players.pop();      
+    }
   }
 }

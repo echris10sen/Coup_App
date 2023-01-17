@@ -3,9 +3,11 @@ export class player {
     isDead;
     card1;
     card2;
+    numCoins;
     
     // Constructors
     player(card1, card2) {
+        this.setnumCoins(2);
         this.setisDead(false);
         this.setcard1(card1);
         this.setcard2(card2)
@@ -32,5 +34,12 @@ export class player {
     }
     setcard2(card2){
         this.card2 = card2
+    }
+    getnumCoins(){
+        return this.numCoins;
+    }
+
+    setnumCoins(numCoins){
+        this.numCoins = numCoins;
     }
 }
