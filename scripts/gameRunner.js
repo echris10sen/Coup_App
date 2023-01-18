@@ -12,7 +12,6 @@ export class gameRunner {
     this.initialDeck = new deck();
     this.initialDeck.deck();
     this.numPlayers = [];
-    console.log("hello");
   }
   
   //methods
@@ -28,9 +27,11 @@ export class gameRunner {
   }
 
   runGame() {
-    console.log("hello I work");
     // Setup
-    let gameDeck = this.initialDeck.shuffle();
+    let gameDeck = new deck();
+    gameDeck.deck();
+    gameDeck.shuffle();
+    console.log(gameDeck);
     let players = this.numPlayers;
 
     // Player Cards
@@ -63,5 +64,10 @@ export class gameRunner {
     for (let index = players.length; index > 0; index--) {
         players.pop();      
     }
+  }
+
+  //get test
+  getinitialDeck() {
+    return this.initialDeck;
   }
 }
