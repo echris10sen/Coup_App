@@ -26,6 +26,10 @@ export class gameRunner {
     
   }
 
+  setup() {
+    
+  }
+
   runGame() {
     // Setup
     let gameDeck = new deck();
