@@ -27,7 +27,37 @@ export class gameRunner {
   }
 
   setup() {
+    let gameDeck = new deck();
+    gameDeck.deck();
+    gameDeck.shuffle();
+    let players = this.numPlayers;
+
+    // Player Cards
+    let card1 = new card();
+    card1.card(gameDeck.getDecklist()[0]);
     
+    let card2 = new card();
+    card2.card(gameDeck.getDecklist()[3]);
+
+    let player1 = new player();
+    player1.player(card1, card2);
+    
+    // Opponent Cards
+    let card3 = new card();
+    card3.card(gameDeck.getDecklist()[2]);
+    
+    let card4 = new card();
+    card4.card(gameDeck.getDecklist()[4]);
+
+    let player2 = new player();
+    player2.player(card2, card4);
+
+    players.push(player1);
+    players.push(player2);
+  }
+
+  initialDisplay() {
+
   }
 
   runGame() {
@@ -35,34 +65,31 @@ export class gameRunner {
     let gameDeck = new deck();
     gameDeck.deck();
     gameDeck.shuffle();
-    console.log(gameDeck);
     let players = this.numPlayers;
 
     // Player Cards
     let card1 = new card();
-    card1.card(gameDeck[0]);
-
+    card1.card(gameDeck.getDecklist()[0]);
+    
     let card2 = new card();
-    card2.card(gameDeck[3]);
+    card2.card(gameDeck.getDecklist()[3]);
 
     let player1 = new player();
     player1.player(card1, card2);
     
-   
-
     // Opponent Cards
     let card3 = new card();
-    card3.card(gameDeck[2]);
+    card3.card(gameDeck.getDecklist()[2]);
     
     let card4 = new card();
-    card4.card(gameDeck[4]);
+    card4.card(gameDeck.getDecklist()[4]);
 
     let player2 = new player();
     player2.player(card2, card4);
 
     players.push(player1);
     players.push(player2);
-    
+   
     this.showCards(players);
 
     for (let index = players.length; index > 0; index--) {
